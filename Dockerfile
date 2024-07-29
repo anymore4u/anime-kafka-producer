@@ -22,8 +22,8 @@ FROM openjdk:17-jdk-alpine
 # Adicione um volume apontando para /tmp
 VOLUME /tmp
 
-# Torne a porta 8080 disponível para o mundo exterior
-EXPOSE 8080
+# Torne a porta 8081 disponível para o mundo exterior
+EXPOSE 8081
 
 # Defina variáveis de ambiente
 ENV SPRING_PROFILES_ACTIVE=prod

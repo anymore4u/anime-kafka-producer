@@ -33,10 +33,11 @@ public class AnimeService {
     private final KafkaAdmin kafkaAdmin;
     final int delay = 2000;  // Delay de 2 segundos
 
-
     private void recreateTopic(String topicName) {
         Map<String, Object> config = new HashMap<>();
         config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+//        config.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka:29092");
+
 
         try (AdminClient adminClient = AdminClient.create(config)) {
             Set<String> topics = adminClient.listTopics().names().get();
@@ -58,7 +59,6 @@ public class AnimeService {
         }
     }
 
-    @Scheduled(cron = "0 0 8,20 * * *", zone = "America/Sao_Paulo")
     public void fetchAndSendAnimeData() {
         String apiUrl = "https://api.jikan.moe/v4/seasons/now";
         Set<Anime> uniqueAnimes = new HashSet<>();

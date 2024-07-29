@@ -4,12 +4,10 @@ import com.example.animeproducer.service.AnimeService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/animes")
+//@RequestMapping("/animes")
 @RequiredArgsConstructor
 public class AnimeController {
 
@@ -17,11 +15,11 @@ public class AnimeController {
 
     private final AnimeService animeService;
 
-    @GetMapping("/update")
+    /*@GetMapping("/update")
     public String updateAnimes() {
         logger.info("Recebida requisição para atualização de animes");
         animeService.fetchAndSendAnimeData();
         logger.info("Atualização de animes concluída com sucesso");
         return "Anime data updated successfully.";
-    }
+    }*/
 }
