@@ -19,6 +19,7 @@ public class Anime {
     private Images images;
     @JsonProperty("url")
     private String url;
+    private String status;
 
     public String getMalId() {
         return malId;
@@ -90,6 +91,14 @@ public class Anime {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 

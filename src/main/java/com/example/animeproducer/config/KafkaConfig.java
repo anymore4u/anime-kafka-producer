@@ -13,6 +13,16 @@ public class KafkaConfig {
         return TopicBuilder.name("anime-topic")
                 .partitions(1)
                 .replicas(1)
+                //.config("cleanup.policy", "delete")
+                .build();
+    }
+
+    @Bean
+    public NewTopic controlTopic() {
+        return TopicBuilder.name("control-topic")
+                .partitions(1)
+                .replicas(1)
+                //.config("cleanup.policy", "delete")
                 .build();
     }
 }
